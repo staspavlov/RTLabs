@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity"
+      minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="600.0" prefWidth="800.0"
+      xmlns="http://javafx.com/javafx/8.0.111"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.staspavlov.rtlabs.controller.AppController">
+    <children>
+        <Label text="Табличный отчет">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+         <VBox.margin>
+            <Insets left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+        </Label>
+        <TableView fx:id="tableClaims" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="columnNumber" text="Заявка" />
+                <TableColumn fx:id="columnDate" text="Дата" />
+                <TableColumn fx:id="columnForm" text="Форма" />
+                <TableColumn fx:id="columnStatus" text="Статус" />
+                <TableColumn fx:id="columnName" text="ФИО" />
+                <TableColumn fx:id="columnType" text="Тип" />
+                <TableColumn fx:id="columnService" text="Услуга" />
+                <TableColumn fx:id="columnSubservices" text="Подуслуги" />
+                <TableColumn fx:id="columnDepartment" text="Ведомство" />
+            </columns>
+            <VBox.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </VBox.margin>
+        </TableView>
+      <Separator prefWidth="200.0" />
+        <Label text="Гистограмма">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+         <VBox.margin>
+            <Insets left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+        </Label>
+        <HBox alignment="CENTER_LEFT">
+            <children>
+                <Label text="Тип заявителя">
+                    <HBox.margin>
+                        <Insets left="5.0" right="5.0" top="5.0" />
+                    </HBox.margin>
+                </Label>
+                <ChoiceBox fx:id="choiceType" prefWidth="150.0">
+                    <HBox.margin>
+                        <Insets left="5.0" right="5.0" top="5.0" />
+                    </HBox.margin>
+                </ChoiceBox>
+            </children>
+        </HBox>
+        <BarChart fx:id="chartHistogram">
+            <xAxis>
+                <CategoryAxis side="BOTTOM" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis side="LEFT" />
+            </yAxis>
+            <VBox.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </VBox.margin>
+        </BarChart>
+    </children>
+</VBox>
